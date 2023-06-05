@@ -11,10 +11,27 @@ const MockFollowersList = () => {
 }
 
 
-describe("Header", () => {
+describe("FollowersList", () => {
+  beforeEach(() => {
+    jest.mock("../../../__mocks__/axios")
+  })
+
+  beforeAll(() => {
+    console.log('Running before all tests')
+  })
+
+  afterEach(() => {
+    console.log('Running after each test')
+  })
+
+  afterAll(() => {
+    console.log('Running after all tests')
+  })
+
   test('should render follower item', async () => {
     render(<MockFollowersList />);
     const followerDivElement = await screen.findByTestId('follower-item-0');
+    screen.debug()
     expect(followerDivElement).toBeInTheDocument();
   });
 

@@ -1,6 +1,6 @@
 const mockResponse = {
   data: {
-    result: [
+    results: [
       {
         name: {
           first: 'Laith',
